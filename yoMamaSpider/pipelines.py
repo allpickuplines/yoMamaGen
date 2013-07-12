@@ -1,10 +1,14 @@
+from scrapy import log
+from pysqlite2 import dbapi2 as sqlite
+
+
 class YomamaspiderPipeline(object):
     def __init__(self):
         # Possible we should be doing this in spider_open instead, but okay
         self.connection = sqlite.connect('../../yomama.db')
         self.cursor = self.connection.cursor()
         self.cursor.execute('CREATE TABLE IF NOT EXISTS joke ' \
-                    '(id INTEGER PRIMARY KEY, joke TEXT NOT NULL, categories TEXT NOT NULL)')
+                            '(id INTEGER PRIMARY KEY, joke TEXT NOT NULL, categories TEXT NOT NULL)')
 
     def process_item(self, item, spider):
         self.cursor.execute("select * from joke where joke=?", item['joke'])
