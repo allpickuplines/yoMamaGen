@@ -1,5 +1,6 @@
 from scrapy.contrib.spiders import CrawlSpider
 from scrapy.selector import HtmlXPathSelector
+from scrapy.http import Request, FormRequest
 from yoMamaSpider.items import JokeItem
 from yoMamaSpider.strip_stopwords import strip_title
 import urlparse
