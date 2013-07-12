@@ -12,7 +12,8 @@ SPIDER_MODULES = ['yoMamaSpider.spiders']
 NEWSPIDER_MODULE = 'yoMamaSpider.spiders'
 
 ITEM_PIPELINES = [
-        'yoMamaSpider.pipelines.YomamaspiderPipeline',
+    'yoMamaSpider.pipelines.YomamaspiderPipeline',
+    'yoMamaSpider.pipelines.JsonWriterPipeline',     
 ]
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
