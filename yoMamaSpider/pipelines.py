@@ -13,7 +13,8 @@ class YomamaspiderPipeline(object):
 
     def process_item(self, item, spider):
         print "Processing Item"
-        self.cursor.execute("select * from joke where joke=?", item['joke'])
+        joke = (item['joke'],)
+        self.cursor.execute("select * from joke where joke=?", joke)
         result = self.cursor.fetchone()
         if result:
             log.msg("Item already in database: %s" % item, level=log.DEBUG)
