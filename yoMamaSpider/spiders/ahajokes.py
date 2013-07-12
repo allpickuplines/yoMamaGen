@@ -31,12 +31,12 @@ class AhaJokesSpider(CrawlSpider):
         self.log(url)
         yield Request(url, callback=self.parse)
 
-        print 'TITLE! = ' + str(hxs.select('//title').extract())
-
         categories = strip_stopwords(hxs.select('//title').extract())
 
         for joke_box in hxs.select('//div[@id="Joke_box"]').extract():
             for joke in joke_box.split("<br><br>"):
-                joke = re.sub(r'<br>', ' ', joke)
-                print 'joke = ' + str(joke)
-                yield JokeItem(joke=joke.strip(), tags=tag)
+                joke = re.sub(r'([^\w]|^\s+)', ' ', joke)
+                joke = re.sub(r'(br|id="Joke_box">|div)', '', joke)
+                joke = joke[0:joke.find('i Submitted by')].strip()
+                if joke != '':
+                    yield JokeItem(joke=joke, categories=categories)
