@@ -4,6 +4,7 @@ from pysqlite2 import dbapi2 as sqlite
 
 class YomamaspiderPipeline(object):
     def __init__(self):
+        print "Initializing SQLite pipeline."
         # Possible we should be doing this in spider_open instead, but okay
         self.connection = sqlite.connect('../../yomama.db')
         self.cursor = self.connection.cursor()
@@ -11,6 +12,7 @@ class YomamaspiderPipeline(object):
                             '(id INTEGER PRIMARY KEY, joke TEXT NOT NULL, categories TEXT NOT NULL)')
 
     def process_item(self, item, spider):
+        print "Processing Item"
         self.cursor.execute("select * from joke where joke=?", item['joke'])
         result = self.cursor.fetchone()
         if result:
