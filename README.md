@@ -18,7 +18,7 @@ This project uses Scrapy to scrape the data, all Scrapy commands are available e
 
 ```
     scrapy list
-    scrapy spider [spider_name]
+    scrapy crawl [spider_name]
 ```
 
 Providing an API
