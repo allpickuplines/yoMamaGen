@@ -2,7 +2,7 @@ from scrapy.contrib.spiders import CrawlSpider
 from scrapy.selector import HtmlXPathSelector
 from scrapy.http import Request, FormRequest
 from yoMamaSpider.items import JokeItem
-from yoMamaSpider.strip_stopwords import strip_title
+from yoMamaSpider.striptags import striptags
 import urlparse
 import re
 
@@ -31,12 +31,12 @@ class AhaJokesSpider(CrawlSpider):
         self.log(url)
         yield Request(url, callback=self.parse)
 
-        categories = strip_title(hxs.select('//title/text()').extract())
+        categories = striptags(hxs.select('//title/text()').extract())
 
         for joke_box in hxs.select('//div[@id="Joke_box"]/text()').extract():
             for joke in joke_box.split("<br><br>"):
                 joke = re.sub(r'([^\w]|^\s+)', ' ', joke)
-                joke = re.sub(r'(br|id="Joke_box">|div)', '', joke)
+                joke = re.sub(r'(id="Joke_box">|div)', '', joke)
                 joke = joke[0:joke.find('i Submitted by')].strip()
                 if joke != '':
                     yield JokeItem(joke=joke, categories=categories)
