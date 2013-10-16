@@ -19,7 +19,7 @@ class YomamaspiderPipeline(object):
         if result:
             log.msg("Item already in database: %s" % item, level=log.DEBUG)
         else:
-            self.cursor.execute("insert into joke (jokes, categories) values (?, ?)",(item['joke'][0], item['categories'][0]))
+            self.cursor.execute("insert into jokes (joke, categories) values (?, ?)",(item['joke'][0], item['categories'][0]))
 
             self.connection.commit()
 
