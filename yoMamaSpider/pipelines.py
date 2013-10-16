@@ -8,7 +8,7 @@ class YomamaspiderPipeline(object):
         # Possible we should be doing this in spider_open instead, but okay
         self.connection = sqlite.connect('../yomama.db')
         self.cursor = self.connection.cursor()
-        self.cursor.execute('CREATE TABLE IF NOT EXISTS joke ' \
+        self.cursor.execute('CREATE TABLE IF NOT EXISTS jokes ' \
                             '(id INTEGER PRIMARY KEY, joke TEXT NOT NULL, categories TEXT NOT NULL)')
 
     def process_item(self, item, spider):
@@ -19,7 +19,7 @@ class YomamaspiderPipeline(object):
         if result:
             log.msg("Item already in database: %s" % item, level=log.DEBUG)
         else:
-            self.cursor.execute("insert into joke (joke, categories) values (?, ?)",(item['joke'][0], item['categories'][0]))
+            self.cursor.execute("insert into joke (jokes, categories) values (?, ?)",(item['joke'][0], item['categories'][0]))
 
             self.connection.commit()
 
