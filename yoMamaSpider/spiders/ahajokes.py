@@ -35,8 +35,6 @@ class AhaJokesSpider(CrawlSpider):
 
         for joke_box in hxs.select('//div[@id="Joke_box"]/text()').extract():
             for joke in joke_box.split("<br><br>"):
-                joke = re.sub(r'([^\w]|^\s+)', ' ', joke)
-                joke = re.sub(r'(id="Joke_box">|div)', '', joke)
                 joke = joke[0:joke.find('i Submitted by')].strip()
                 if joke != '':
                     yield JokeItem(joke=joke, categories=categories)
