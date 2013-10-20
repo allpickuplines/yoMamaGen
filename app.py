@@ -1,6 +1,7 @@
 from flask import Flask
-from flask_peewee.db import Database
 from peewee import *
+from flask_peewee.db import Database
+from flask_peewee.rest import RestAPI
 
 # configure our database
 DATABASE = {
@@ -21,6 +22,9 @@ class Jokes(db.Model):
     joke = TextField()
     categories = TextField()
 
+api = RestAPI(app)
+api.register(Jokes)
+api.setup()
 
 if __name__ == '__main__':
     Jokes.create_table(fail_silently=True)
