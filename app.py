@@ -17,12 +17,12 @@ app.config.from_object(__name__)
 db = Database(app)
 
 
-class Joke(db.Model):
+class Jokes(db.Model):
     joke = TextField()
     categories = TextField()
 
 
 if __name__ == '__main__':
-    Joke.create_table(fail_silently=True)
+    Jokes.create_table(fail_silently=True)
 
     app.run()

@@ -9,7 +9,7 @@ class YomamaspiderPipeline(object):
         self.connection = sqlite.connect('yomama.db')
         self.cursor = self.connection.cursor()
         self.cursor.execute('CREATE TABLE IF NOT EXISTS jokes ' \
-                            '(id INTEGER PRIMARY KEY, joke TEXT NOT NULL, categories TEXT NOT NULL)')
+                            '(id INTEGER NOT NULL PRIMARY KEY, joke TEXT NOT NULL, categories TEXT NOT NULL)')
 
     def process_item(self, item, spider):
         print "Processing Item"
