@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 from peewee import *
 from flask_peewee.db import Database
 from flask_peewee.rest import RestAPI
@@ -25,6 +25,10 @@ class Jokes(db.Model):
 api = RestAPI(app)
 api.register(Jokes)
 api.setup()
+
+@app.route('/')
+def homepage():
+	return render_template('index.html')
 
 if __name__ == '__main__':
     Jokes.create_table(fail_silently=True)

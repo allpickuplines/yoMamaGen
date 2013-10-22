@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<title>Test site</title>
+<body>
+  <h2>{% block content_title %}{% endblock %}</h2>
+  {% block content %}{% endblock %}
+  <p id="demo">Hi</p>
+
+
+	<button type="button" onclick="getJoke()">Get Jokes</button>
+</body>
+<script>
+	function getJoke() {
+		var jokesList = "";
+		while (jokesList == "") {
+			var page = Math.floor(Math.random() * 10) + 1;
+			var xmlHttp = null;
+		    xmlHttp = new XMLHttpRequest();
+		    xmlHttp.open( "GET", "http://127.0.0.1:5000/api/jokes/?page=" + page, false);
+		    xmlHttp.send(null);
+		    jokesList = xmlHttp.responseText.toString();
+		    jokesList = "{" + jokesList.substring(jokesList.indexOf("[") + 1).replace(/[[\]]/g,"");
+		    if (jokesList.length < 5) {
+		    	jokesList = "";
+		    }
+		}
+		if (jokesList == "") {
+			console.log("no jokes found");
+		} else {
+			var jokeNumber = Math.floor(Math.random() * 20) + 1;
+			var joke = jokesList.split("joke")[jokeNumber];
+			var categories = joke.split("categories")[1].replace(/[^\w\s]/gi, "");
+			joke = joke.split('"id":')[0];
+			joke = joke.substring(4,joke.length - 10)
+			document.getElementById("demo").innerHTML = joke;;
+		}
+	}
+</script>
+</html>
