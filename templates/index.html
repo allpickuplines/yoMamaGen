@@ -2,6 +2,7 @@
 <html>
 <head>
 <link href='http://fonts.googleapis.com/css?family=Joti+One' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Share+Tech' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Knewave' rel='stylesheet' type='text/css'>
 <style>
 body {
@@ -12,7 +13,14 @@ h1 {
 	font-family: 'Joti One', cursive;
 	font-size: 100px;
 	color: #F7E240;
+	width: 100%;
 	text-shadow: 0px 0px 0 rgb(195,174,12),1px 1px 0 rgb(152,131,-31),2px 2px 0 rgb(110,89,-73),3px 3px 0 rgb(67,46,-116),4px 4px 0 rgb(25,4,-158),5px 5px 0 rgb(-18,-39,-201), 6px 6px 0 rgb(-60,-81,-243),7px 7px 6px rgba(0,0,0,1),7px 7px 1px rgba(0,0,0,0.5),0px 0px 6px rgba(0,0,0,.2);
+}
+p {
+	color: #BDAD44;
+	font-family: 'Share Tech', sans-serif;
+	font-size: 20px;
+	text-shadow: 1px 1px #141203;
 }
 button {
 	font-family: 'Knewave', cursive;
@@ -20,8 +28,7 @@ button {
 	color: #D6B03E;
 	background:none;
     border:none;
-    margin:0;
-    padding:0;
+	width: 100%;
     text-shadow: 0px 0px 0 rgb(196,160,53),1px 1px 0 rgb(175,139,32),2px 2px 0 rgb(154,118,11),3px 3px 0 rgb(134,98,-9),4px 4px 0 rgb(113,77,-30),5px 5px 0 rgb(92,56,-51),6px 6px 0 rgb(71,35,-72), 7px 7px 0 rgb(50,14,-93),8px 8px 7px rgba(0,0,0,0.5),8px 8px 1px rgba(0,0,0,0.5),0px 0px 7px rgba(0,0,0,.2);
 }
 button:hover {
@@ -34,13 +41,27 @@ button:active {
 	padding-left: 7px;
 	text-shadow: 0px 0px 0 rgb(180,144,37),1px 1px 0 rgb(143,107,0),2px 2px 0 rgb(106,70,-37),3px 3px 0 rgb(69,33,-74), 4px 4px 0 rgb(32,-4,-111),5px 5px 4px rgba(0,0,0,0.5),5px 5px 1px rgba(0,0,0,0.5),0px 0px 4px rgba(0,0,0,.2);
 }
+#joke_box {
+	background-color: #4D2F1A;
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	-webkit-box-shadow:0 3px 4px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.8) inset;
+    -moz-box-shadow:0 3px 4px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.8) inset;
+    box-shadow:0 3px 4px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.8) inset;
+}
 </style>
 </head>
 <title>Test site</title>
 <body>
   	<h1>Yo Mama Gen!</h2>
-  	<p id="demo">Hi</p>
-	<button type="button" onclick="getJoke()">GENERATE!</button>
+  	<div id="joke_box">
+	  	<p id="joke">Hi</p>
+		<button type="button" onclick="getJoke()">GENERATE!</button>
+	</div>
 </body>
 <script>
 	function getJoke() {
@@ -65,7 +86,7 @@ button:active {
 			var categories = joke.split("categories")[1].replace(/[^\w\s]/gi, "");
 			joke = joke.split('"id":')[0];
 			joke = joke.substring(4,joke.length - 10)
-			document.getElementById("demo").innerHTML = joke;;
+			document.getElementById("joke").innerHTML = joke;;
 		}
 	}
 </script>
