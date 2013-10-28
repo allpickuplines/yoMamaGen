@@ -2,7 +2,7 @@ from scrapy.contrib.spiders import CrawlSpider
 from scrapy.selector import HtmlXPathSelector
 from scrapy.http import Request
 from yoMamaSpider.items import JokeItem
-from yoMamaSpider.striputils import stripcats
+from yoMamaSpider.striputils import stripcats, stripjokes
 import urlparse
 import re
 
@@ -35,6 +35,6 @@ class AhaJokesSpider(CrawlSpider):
 
         for joke_box in hxs.select('//div[@id="Joke_box"]/text()').extract():
             for joke in joke_box.split('<br><br>'):
-                joke = joke[0:joke.find('i Submitted by')].strip()
-                if joke != '':
+                joke = stripjokes(joke)
+                if len(joke) > 15:
                     yield JokeItem(joke=joke, categories=categories)
