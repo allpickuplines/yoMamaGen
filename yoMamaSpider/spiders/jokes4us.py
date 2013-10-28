@@ -2,7 +2,7 @@ from scrapy.contrib.spiders import CrawlSpider
 from scrapy.selector import HtmlXPathSelector
 from scrapy.http import Request
 from yoMamaSpider.items import JokeItem
-from yoMamaSpider.striptags import striptags
+from yoMamaSpider.stripcats import stripcats
 import re
 
 class Jokes4UsSpider(CrawlSpider):
@@ -22,7 +22,7 @@ class Jokes4UsSpider(CrawlSpider):
 
     def parse_page(self, response):
         hxs = HtmlXPathSelector(response)
-        categories = striptags(hxs.select('//title/text()').extract())
+        categories = stripcats(hxs.select('//title/text()').extract())
         joke_area = hxs.select('//p/text()').extract()
         for joke in joke_area:
             joke = joke.replace('\r\n', '')
