@@ -17,4 +17,8 @@ def stripcats(cat):
     return ' '.join(remainder)
 
 def stripjokes(joke):
-	return str(re.sub(' +', ' ', joke.replace('\"', "'")).replace('\r\n', '').strip())
+    joke = re.sub(' +', ' ', joke.replace('\"', "'"))
+    joke = joke.replace('\r\n', '')
+    joke = joke.replace("(", '')
+    joke = joke.replace("\n\n\n", '')
+    return joke
