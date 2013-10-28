@@ -33,6 +33,7 @@ ever
 every
 for
 from
+galore
 get
 got
 gt
