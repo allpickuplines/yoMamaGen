@@ -12,9 +12,9 @@ def stripcats(cat):
     words = cat.split('\n')
     for word in words:
         if word != '':
-            if word.lower() not in stopwords:
-                remainder.append(word)
-    return ','.join(remainder)
+            if word.lower() not in stopwords and word not in remainder:
+                remainder.append(word.capitalize())
+    return ' '.join(remainder)
 
 def stripjokes(joke):
 	return str(re.sub(' +', ' ', joke.replace('\"', "'")).replace('\r\n', '').strip())
