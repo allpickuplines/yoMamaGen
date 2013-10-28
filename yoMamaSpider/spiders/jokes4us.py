@@ -2,7 +2,7 @@ from scrapy.contrib.spiders import CrawlSpider
 from scrapy.selector import HtmlXPathSelector
 from scrapy.http import Request
 from yoMamaSpider.items import JokeItem
-from yoMamaSpider.stripcats import stripcats
+from yoMamaSpider.striputils import stripcats, stripjokes
 import re
 
 class Jokes4UsSpider(CrawlSpider):
