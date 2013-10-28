@@ -25,6 +25,6 @@ class Jokes4UsSpider(CrawlSpider):
         categories = stripcats(hxs.select('//title/text()').extract())
         joke_area = hxs.select('//p/text()').extract()
         for joke in joke_area:
-            joke = str(re.sub(' +', ' ', joke.replace('\"', "'")).replace('\r\n', '').strip())
+            joke = stripjokes(joke)
             if len(joke) > 15:
                 yield JokeItem(joke=joke, categories=categories)
