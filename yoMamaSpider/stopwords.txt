@@ -64,6 +64,7 @@ mama
 may
 me
 might
+momma
 most
 must
 my
@@ -71,6 +72,7 @@ neither
 no
 nor
 not
+o
 of
 off
 often
@@ -81,6 +83,7 @@ other
 our
 own
 rather
+s
 said
 say
 says
