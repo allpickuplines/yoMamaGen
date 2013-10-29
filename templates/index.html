@@ -25,7 +25,7 @@ p {
 	font-family: 'Share Tech', sans-serif;
 	font-size: 20px;
 	text-shadow: 1px 1px #141203;
-	padding-top: 20px;
+	padding-top: 25px;
 	padding-bottom: 20px;
 }
 button {
@@ -58,7 +58,25 @@ button:active {
     -moz-box-shadow:0 3px 4px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.2) inset;
     box-shadow:0 3px 4px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.2) inset;
 }
-
+footer
+{
+	color: #FFFFFF;
+    background: #000000;
+    text-align: center;
+    vertical-align: middle;
+    position:fixed;
+    bottom:0;
+    width:100%;
+    height:40px;
+    right: 0;
+	padding-top: 20px;
+    -webkit-box-shadow:0 0 20px rgba(184, 162, 138, 0.4) inset;
+    -moz-box-shadow:0 0 20px rgba(184, 162, 138, 0.4) inset;
+    box-shadow:0 0 20px rgba(184, 162, 138, 0.4) inset;
+}
+a {
+	color: #FFFFFF;
+}
 @media screen and (max-width:640px){
     body {
 		width: 620px;
@@ -125,11 +143,16 @@ button:active {
 	</div>
 	<button type="button" onclick="getJoke()">GENERATE!</button>
 </body>
+<footer>
+	<a href="https://github.com/kreamt/yoMamaGen">View Source Code</a> |
+	<a>Mobile App (Coming Soon!)</a> |
+	<a href="mailto:contact@yomamagen.com">Contact Us</a>
+</footer>
 <script>
 	function getJoke() {
 		var jokesList = "";
 		while (jokesList == "") {
-			var page = Math.floor(Math.random() * 10) + 1;
+			var page = Math.floor(Math.random() * 106) + 1;
 			var xmlHttp = null;
 		    xmlHttp = new XMLHttpRequest();
 		    xmlHttp.open( "GET", "http://127.0.0.1:5000/api/jokes/?page=" + page, false);
