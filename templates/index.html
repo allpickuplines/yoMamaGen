@@ -8,6 +8,9 @@
 body {
 	background-color: #964929;
 	text-align: center;
+	width: 750px;
+	margin-left: auto;
+	margin-right: auto;
 }
 h1 {
 	font-family: 'Joti One', cursive;
@@ -28,7 +31,6 @@ button {
 	color: #D6B03E;
 	background:none;
     border:none;
-	width: 100%;
     text-shadow: 0px 0px 0 rgb(196,160,53),1px 1px 0 rgb(175,139,32),2px 2px 0 rgb(154,118,11),3px 3px 0 rgb(134,98,-9),4px 4px 0 rgb(113,77,-30),5px 5px 0 rgb(92,56,-51),6px 6px 0 rgb(71,35,-72), 7px 7px 0 rgb(50,14,-93),8px 8px 7px rgba(0,0,0,0.5),8px 8px 1px rgba(0,0,0,0.5),0px 0px 7px rgba(0,0,0,.2);
 }
 button:hover {
@@ -43,15 +45,70 @@ button:active {
 }
 #joke_box {
 	background-color: #4D2F1A;
-	width: 50%;
-	margin-left: auto;
-	margin-right: auto;
+	width: 100%;
 	-webkit-border-radius: 15px;
 	-moz-border-radius: 15px;
 	border-radius: 15px;
 	-webkit-box-shadow:0 3px 4px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.2) inset;
     -moz-box-shadow:0 3px 4px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.2) inset;
     box-shadow:0 3px 4px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.2) inset;
+}
+
+@media screen and (max-width:640px){
+    body {
+		width: 620px;
+	}
+	h1 {
+		font-size: 80px;
+	}
+	p {
+		font-size: 18px;
+	}
+	button {
+		font-size: 35px;
+	}
+}
+@media screen and (max-width:480px){
+    body {
+		width: 460px;
+	}
+	h1 {
+		font-size: 60px;
+	}
+	p {
+		font-size: 16px;
+	}
+	button {
+		font-size: 30px;
+	}
+}
+@media screen and (max-width:320px){
+    body {
+		width: 300px;
+	}
+	h1 {
+		font-size: 40px;
+	}
+	p {
+		font-size: 14px;
+	}
+	button {
+		font-size: 25px;
+	}
+}
+@media screen and (max-width:240px){
+    body {;
+		width: 220px;
+	}
+	h1 {
+		font-size: 25px;
+	}
+	p {
+		font-size: 12px;
+	}
+	button {
+		font-size: 20px;
+	}
 }
 </style>
 </head>
