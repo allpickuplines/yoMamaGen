@@ -22,8 +22,12 @@ class Jokes(db.Model):
     joke = TextField()
     categories = TextField()
 
+class Categories(db.Model):
+	category = TextField()
+
 api = RestAPI(app)
 api.register(Jokes)
+api.register(Categories)
 api.setup()
 
 @app.route('/')
