@@ -1,40 +1,72 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href='http://fonts.googleapis.com/css?family=Joti+One' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Share+Tech' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Sigmar+One' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Knewave' rel='stylesheet' type='text/css'>
 <style>
 body {
 	background-color: #964929;
-	text-align: center;
-	width: 750px;
-	margin-left: auto;
-	margin-right: auto;
+	color: #FFFFFF;
+}
+#title_box {
+	background-color: #4D2F1A;
+	width: 100%;
+	position: absolute;
+	top:0;
+	left:0;
+	float: left;
+	height: 10%;
+	padding-left: 1%;
+	margin-bottom: 20px;
+	-webkit-box-shadow:0 3px 4px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.2) inset;
+    -moz-box-shadow:0 3px 4px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.2) inset;
+    box-shadow:0 3px 4px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.2) inset;
+}
+#nav {
+	z-index: 1;
+	position: relative;
+	float: right;
+	padding-right: 1%;
+	padding-top: 3%;
+}
+
+#joke_box {
+	padding-top: 10%;
 }
 h1 {
-	font-family: 'Joti One', cursive;
-	font-size: 100px;
+	font-family: 'Sigmar One', cursive;
+	font-size: 30px;
 	color: #F7E240;
 	width: 100%;
-	margin-bottom: 30px;
 	text-shadow: 0px 0px 0 rgb(195,174,12),1px 1px 0 rgb(152,131,-31),2px 2px 0 rgb(110,89,-73),3px 3px 0 rgb(67,46,-116),4px 4px 0 rgb(25,4,-158),5px 5px 0 rgb(-18,-39,-201), 6px 6px 0 rgb(-60,-81,-243),7px 7px 6px rgba(0,0,0,1),7px 7px 1px rgba(0,0,0,0.5),0px 0px 6px rgba(0,0,0,.2);
+}
+a {
+	font-family: 'Open Sans', sans-serif;
+	color: #FFFFFF;
 }
 p {
 	color: #BDAD44;
-	font-family: 'Share Tech', sans-serif;
-	font-size: 20px;
+	font-family: 'Slackey', cursive;
+	font-size: 60px;
 	text-shadow: 1px 1px #141203;
 	padding-top: 25px;
 	padding-bottom: 20px;
+	text-shadow:0px 0px 0 rgb(165,149,44),1px 1px 0 rgb(150,134,29),2px 2px 0 rgb(136,120,15),3px 3px 0 rgb(122,106,1),4px 4px 0 rgb(107,91,-14),5px 5px 0 rgb(93,77,-28),6px 6px 0 rgb(79,63,-42),7px 7px 0 rgb(64,48,-57),8px 8px 0 rgb(50,34,-71), 9px 9px 0 rgb(36,20,-85),10px 10px 9px rgba(0,0,0,0.6),10px 10px 1px rgba(0,0,0,0.5),0px 0px 9px rgba(0,0,0,.2);
 }
 button {
 	font-family: 'Knewave', cursive;
 	font-size: 40px;
 	color: #D6B03E;
-	background:none;
-    border:none;
-    text-shadow: 0px 0px 0 rgb(196,160,53),1px 1px 0 rgb(175,139,32),2px 2px 0 rgb(154,118,11),3px 3px 0 rgb(134,98,-9),4px 4px 0 rgb(113,77,-30),5px 5px 0 rgb(92,56,-51),6px 6px 0 rgb(71,35,-72), 7px 7px 0 rgb(50,14,-93),8px 8px 7px rgba(0,0,0,0.5),8px 8px 1px rgba(0,0,0,0.5),0px 0px 7px rgba(0,0,0,.2);
+	border: none;
+	border-radius: 15px;
+	background-color: #4D2F1A;
+	width: 250px;
+	-webkit-box-shadow: 0px 0px 0 rgb(54,24,3),1px 1px 0 rgb(49,19,-2),2px 2px 0 rgb(44,14,-7),3px 3px 0 rgb(39,9,-12),4px 4px 0 rgb(33,3,-18),5px 5px 0 rgb(28,-2,-23),6px 6px 0 rgb(23,-7,-28),7px 7px 0 rgb(18,-12,-33),8px 8px 0 rgb(13,-17,-38), 9px 9px 0 rgb(8,-22,-43),10px 10px 9px rgba(0,0,0,0.3),10px 10px 1px rgba(0,0,0,0.5),0px 0px 9px rgba(0,0,0,.2), 0 0 40px rgba(0, 0, 0, 0.2) inset;
+    -moz-box-shadow: 0px 0px 0 rgb(54,24,3),1px 1px 0 rgb(49,19,-2),2px 2px 0 rgb(44,14,-7),3px 3px 0 rgb(39,9,-12),4px 4px 0 rgb(33,3,-18),5px 5px 0 rgb(28,-2,-23),6px 6px 0 rgb(23,-7,-28),7px 7px 0 rgb(18,-12,-33),8px 8px 0 rgb(13,-17,-38), 9px 9px 0 rgb(8,-22,-43),10px 10px 9px rgba(0,0,0,0.3),10px 10px 1px rgba(0,0,0,0.5),0px 0px 9px rgba(0,0,0,.2), 0 0 40px rgba(0, 0, 0, 0.2) inset;
+    box-shadow: 0px 0px 0 rgb(54,24,3),1px 1px 0 rgb(49,19,-2),2px 2px 0 rgb(44,14,-7),3px 3px 0 rgb(39,9,-12),4px 4px 0 rgb(33,3,-18),5px 5px 0 rgb(28,-2,-23),6px 6px 0 rgb(23,-7,-28),7px 7px 0 rgb(18,-12,-33),8px 8px 0 rgb(13,-17,-38), 9px 9px 0 rgb(8,-22,-43),10px 10px 9px rgba(0,0,0,0.3),10px 10px 1px rgba(0,0,0,0.5),0px 0px 9px rgba(0,0,0,.2), 0 0 40px rgba(0, 0, 0, 0.2) inset;
+    text-shadow: 0px 0px 0 rgb(159,121,7),1px 1px 0 rgb(122,84,-30),2px 2px 0 rgb(85,47,-67),3px 3px 0 rgb(48,10,-104), 4px 4px 0 rgb(11,-27,-141),5px 5px 4px rgba(0,0,0,0.3),5px 5px 1px rgba(0,0,0,0.5),0px 0px 4px rgba(0,0,0,.2);
 }
 button:hover {
 	cursor: pointer;
@@ -42,40 +74,11 @@ button:hover {
 }
 button:active {
 	color: #E3BF54;
-	padding-top: 5px;
-	padding-left: 7px;
-	text-shadow: 0px 0px 0 rgb(180,144,37),1px 1px 0 rgb(143,107,0),2px 2px 0 rgb(106,70,-37),3px 3px 0 rgb(69,33,-74), 4px 4px 0 rgb(32,-4,-111),5px 5px 4px rgba(0,0,0,0.5),5px 5px 1px rgba(0,0,0,0.5),0px 0px 4px rgba(0,0,0,.2);
-}
-#joke_box {
-	background-color: #4D2F1A;
-	width: 100%;
-	height: 80px;
-	margin-bottom: 20px;
-	-webkit-border-radius: 15px;
-	-moz-border-radius: 15px;
-	border-radius: 15px;
-	-webkit-box-shadow:0 3px 4px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.2) inset;
-    -moz-box-shadow:0 3px 4px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.2) inset;
-    box-shadow:0 3px 4px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.2) inset;
-}
-footer
-{
-	color: #FFFFFF;
-    background: #000000;
-    text-align: center;
-    vertical-align: middle;
-    position:fixed;
-    bottom:0;
-    width:100%;
-    height:40px;
-    right: 0;
-	padding-top: 20px;
-    -webkit-box-shadow:0 0 20px rgba(184, 162, 138, 0.4) inset;
-    -moz-box-shadow:0 0 20px rgba(184, 162, 138, 0.4) inset;
-    box-shadow:0 0 20px rgba(184, 162, 138, 0.4) inset;
-}
-a {
-	color: #FFFFFF;
+	margin-top: 4px;
+	margin-left: 4px;
+	-webkit-box-shadow: 0px 0px 0 rgb(45,15,-6),1px 1px 0 rgb(36,6,-15),2px 2px 0 rgb(28,-2,-23),3px 3px 0 rgb(19,-11,-32),4px 4px 0 rgb(10,-20,-41),5px 5px 0 rgb(1,-29,-50), 6px 6px 0 rgb(-8,-38,-59),7px 7px 6px rgba(0,0,0,0.3),7px 7px 1px rgba(0,0,0,0.5),0px 0px 6px rgba(0,0,0,.2);
+	-moz-box-shadow:0px 0px 0 rgb(45,15,-6),1px 1px 0 rgb(36,6,-15),2px 2px 0 rgb(28,-2,-23),3px 3px 0 rgb(19,-11,-32),4px 4px 0 rgb(10,-20,-41),5px 5px 0 rgb(1,-29,-50), 6px 6px 0 rgb(-8,-38,-59),7px 7px 6px rgba(0,0,0,0.3),7px 7px 1px rgba(0,0,0,0.5),0px 0px 6px rgba(0,0,0,.2);
+	box-shadow:0px 0px 0 rgb(45,15,-6),1px 1px 0 rgb(36,6,-15),2px 2px 0 rgb(28,-2,-23),3px 3px 0 rgb(19,-11,-32),4px 4px 0 rgb(10,-20,-41),5px 5px 0 rgb(1,-29,-50), 6px 6px 0 rgb(-8,-38,-59),7px 7px 6px rgba(0,0,0,0.3),7px 7px 1px rgba(0,0,0,0.5),0px 0px 6px rgba(0,0,0,.2);
 }
 @media screen and (max-width:640px){
     body {
@@ -137,17 +140,21 @@ a {
 </head>
 <title>Yo Mama Gen! | Home of the worlds largest collection of Yo Mama jokes!</title>
 <body>
-  	<h1>Yo Mama Gen!</h2>
+	<div id="top_bar">
+		<div id="title_box">
+  			<h1>YOMAMAGEN.COM</h2>
+  		</div>
+  		<div id="nav">
+	  		<a href="https://github.com/kreamt/yoMamaGen">View Source Code</a> |
+			<a>Mobile App (Coming Soon!)</a> |
+			<a href="mailto:contact@yomamagen.com">Contact Us</a>
+		</div>
+  	</div>
   	<div id="joke_box">
 	  	<p id="joke">Hi</p>
 	</div>
 	<button type="button" onclick="getJoke()">GENERATE!</button>
 </body>
-<footer>
-	<a href="https://github.com/kreamt/yoMamaGen">View Source Code</a> |
-	<a>Mobile App (Coming Soon!)</a> |
-	<a href="mailto:contact@yomamagen.com">Contact Us</a>
-</footer>
 <script>
 	function getJoke() {
 		var jokesList = "";
