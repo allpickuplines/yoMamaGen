@@ -24,7 +24,7 @@ body {
     -moz-box-shadow:0 3px 4px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.2) inset;
     box-shadow:0 3px 4px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.2) inset;
 }
-#nav {
+#footer {
 	z-index: 1;
 	position: relative;
 	float: right;
@@ -33,6 +33,12 @@ body {
 }
 #joke_box {
 	padding-top: 10%;
+}
+#footer {
+	width: 100%;
+	text-align: center;
+	position: absolute;
+    bottom: 3%;
 }
 h1 {
 	font-family: 'Sigmar One', cursive;
@@ -84,17 +90,30 @@ button:active {
 	-moz-box-shadow:0px 0px 0 rgb(45,15,-6),1px 1px 0 rgb(36,6,-15),2px 2px 0 rgb(28,-2,-23),3px 3px 0 rgb(19,-11,-32),4px 4px 0 rgb(10,-20,-41),5px 5px 0 rgb(1,-29,-50), 6px 6px 0 rgb(-8,-38,-59),7px 7px 6px rgba(0,0,0,0.3),7px 7px 1px rgba(0,0,0,0.5),0px 0px 6px rgba(0,0,0,.2);
 	box-shadow:0px 0px 0 rgb(45,15,-6),1px 1px 0 rgb(36,6,-15),2px 2px 0 rgb(28,-2,-23),3px 3px 0 rgb(19,-11,-32),4px 4px 0 rgb(10,-20,-41),5px 5px 0 rgb(1,-29,-50), 6px 6px 0 rgb(-8,-38,-59),7px 7px 6px rgba(0,0,0,0.3),7px 7px 1px rgba(0,0,0,0.5),0px 0px 6px rgba(0,0,0,.2);
 }
-@media screen and (max-width:640px){
-    
+footer {
 }
-@media screen and (max-width:480px){
-    
+@media screen and (max-width:1280px){
+    p {
+    	font-size: 50px;
+    }
 }
-@media screen and (max-width:320px){
-    
+@media screen and (max-width:1080px) {
+    p {
+    	font-size: 45px;
+    }
 }
-@media screen and (max-width:240px){
-    
+@media screen and (max-width:840px){
+	p {
+		font-size: 40px;  
+	}
+}
+@media screen and (max-width:460px){
+    p {
+		font-size: 35px;  
+	}
+	a {
+		font-size: 12px;
+	}
 }
 </style>
 </head>
@@ -104,17 +123,17 @@ button:active {
 		<div id="title_box">
   			<h1>YOMAMAGEN.COM</h2>
   		</div>
-  		<div id="nav">
-	  		<a href="https://github.com/kreamt/yoMamaGen">View Source Code</a> |
-			<a>Mobile App (Coming Soon!)</a> |
-			<a href="mailto:contact@yomamagen.com">Contact Us</a>
-		</div>
   	</div>
   	<div id="joke_box">
 	  	<p id="joke">Yo mama so...</p>
 	</div>
 	<div id="button_box">
 		<button type="button" onclick="getJoke()">GENERATE!</button>
+	</div>
+	<div id="footer">
+		<a href="https://github.com/kreamt/yoMamaGen">View Source Code</a> |
+		<a>Mobile App (Coming Soon!)</a> |
+		<a href="mailto:contact@yomamagen.com">Contact Us</a>
 	</div>
 </body>
 <script>
