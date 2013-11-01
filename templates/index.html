@@ -128,12 +128,7 @@ footer {
 	  	<p id="joke">Yo mama so...</p>
 	</div>
 	<div id="button_box">
-		<select>
-			<option value="volvo">Volvo</option>
-		  	<option value="saab">Saab</option>
-		 	<option value="mercedes">Mercedes</option>
-		  	<option value="audi">Audi</option>
-		</select> 
+		<select id="drop_down"></select> 
 		<button type="button" onclick="getJoke()">GENERATE!</button>
 	</div>
 	<div id="footer">
@@ -158,7 +153,21 @@ footer {
 		    if (catsList.length < 5) {
 		    	catsList = "";
 		    }
-		} console.log(catsList);
+		} 
+		catsList = catsList.substring(catsList.indexOf('"objects": [') + 12, catsList.length - 5);
+		catsList = catsList.split('"category":');
+		for (i in catsList) {
+			if (i == 0) {
+				catsList[i] = "All Categories"
+			} else {
+				catsList[i] = catsList[i].substring(2, catsList[i].indexOf('",'))
+			}
+			var dropDown = document.getElementById('drop_down');
+			option = document.createElement("option");
+        	option.value = catsList[i];
+        	option.innerHTML = catsList[i];
+        	dropDown.appendChild(option);
+		}
 	}
 
 	function getJoke() {
