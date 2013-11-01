@@ -127,6 +127,13 @@ footer {
   	<div id="joke_box">
 	  	<p id="joke">Yo mama so...</p>
 	</div>
+	<div id="button_box">
+		<select>
+			<option value="volvo">Volvo</option>
+		  	<option value="saab">Saab</option>
+		 	<option value="mercedes">Mercedes</option>
+		  	<option value="audi">Audi</option>
+		</select> 
 		<button type="button" onclick="getJoke()">GENERATE!</button>
 	</div>
 	<div id="footer">
@@ -136,6 +143,24 @@ footer {
 	</div>
 </body>
 <script>
+	window.onload = function() {
+		var catsList = "";
+		for (var i = 1; i <= 2; i++) {
+			var xmlHttp = null;
+		    xmlHttp = new XMLHttpRequest();
+		    xmlHttp.open( "GET", "http://127.0.0.1:5000/api/categories/?page=" + i, false);
+		    xmlHttp.send(null);
+		    if (catsList.length < 1) {
+		    	catsList = xmlHttp.responseText.toString();
+		    } else {
+		    	catsList = catsList.concat(xmlHttp.responseText.toString());
+		    }
+		    if (catsList.length < 5) {
+		    	catsList = "";
+		    }
+		} console.log(catsList);
+	}
+
 	function getJoke() {
 		var jokesList = "";
 		while (jokesList == "") {
