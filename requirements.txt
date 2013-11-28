@@ -1,2 +1,3 @@
-flask-peewee
-scrapy
+Flask
+Flask-Script
+Flask-SQLAlchemy
