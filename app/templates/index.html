@@ -182,6 +182,20 @@ button:active {
 	}
 }
 </style>
+<script>
+window.onload = function() {
+	$.getJSON("http://127.0.0.1:5000/api/categories/", function(data) {
+		var categories = []
+		$.each(data.categories, function(key, val) {
+			var dropDown = document.getElementById('drop_down');
+			option = document.createElement("option");
+        	option.value = val;
+        	option.innerHTML = val;
+        	dropDown.appendChild(option);
+		})
+	});
+}
+</script>
 </head>
 <title>Yo Mama Gen! | Home of the worlds largest collection of Yo Mama jokes!</title>
 <body>
@@ -196,6 +210,13 @@ button:active {
 	<div id="button_box">
 		<select id="drop_down"></select> 
 		<button type="button" onclick="getJoke()">GENERATE!</button>
+		<script>
+			function getJoke() {
+		    	$.getJSON("http://127.0.0.1:5000/api/joke/", function(data) {
+		        	document.getElementById("joke").innerHTML = data.joke[0];
+		        });
+			}
+		</script>
 	</div>
 	<div id="footer">
 		<a href="https://github.com/kreamt/yoMamaGen" target="_blank">View Source Code</a> |
@@ -203,61 +224,6 @@ button:active {
 		<a href="mailto:contact@yomamagen.com">Contact Us</a>
 	</div>
 </body>
-<script>
-	window.onload = function() {
-		var catsList = "";
-		for (var i = 1; i <= 2; i++) {
-			var xmlHttp = null;
-		    xmlHttp = new XMLHttpRequest();
-		    xmlHttp.open( "GET", "http://127.0.0.1:5000/api/categories/?page=" + i, false);
-		    xmlHttp.send(null);
-		    if (catsList.length < 1) {
-		    	catsList = xmlHttp.responseText.toString();
-		    } else {
-		    	catsList = catsList.concat(xmlHttp.responseText.toString());
-		    }
-		    if (catsList.length < 5) {
-		    	catsList = "";
-		    }
-		} 
-		catsList = catsList.substring(catsList.indexOf('"objects": [') + 12, catsList.length - 5);
-		catsList = catsList.split('"category":');
-		for (i in catsList) {
-			if (i == 0) {
-				catsList[i] = "All Categories"
-			} else {
-				catsList[i] = catsList[i].substring(2, catsList[i].indexOf('",'))
-			}
-			var dropDown = document.getElementById('drop_down');
-			option = document.createElement("option");
-        	option.value = catsList[i];
-        	option.innerHTML = catsList[i];
-        	dropDown.appendChild(option);
-		}
-	}
-
-	function getJoke() {
-		var jokesList = "";
-		var page = Math.floor(Math.random() * 106) + 1;
-		var xmlHttp = null;
-	    xmlHttp = new XMLHttpRequest();
-	    xmlHttp.open( "GET", "http://127.0.0.1:5000/api/jokes/?page=" + page, false);
-	    xmlHttp.send(null);
-	    jokesList = xmlHttp.responseText.toString();
-	    jokesList = "{" + jokesList.substring(jokesList.indexOf("[") + 1).replace(/[[\]]/g,"");
-	    if (jokesList.length < 5) {
-	    	jokesList = "";
-	    }
-		if (jokesList == "") {
-			console.log("no jokes found");
-		} else {
-			var jokeNumber = Math.floor(Math.random() * 20) + 1;
-			var joke = jokesList.split("joke")[jokeNumber];
-			var categories = joke.split("categories")[1].replace(/[^\w\s]/gi, "");
-			joke = joke.split('"id":')[0];
-			joke = joke.substring(4,joke.length - 10)
-			document.getElementById("joke").innerHTML = joke;;
-		}
-	}
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
 </script>
 </html>
