@@ -24,6 +24,16 @@ body {
     -moz-box-shadow:0 3px 4px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.2) inset;
     box-shadow:0 3px 4px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.2) inset;
 }
+#bottom_bar {
+	font-size: 50px;
+	background-color: #4D2F1A;
+	width: 100%;
+	position: absolute;
+	bottom:0;
+	left:0;
+	float: left;
+	height: 120px;
+}
 #footer {
 	width: 100%;
 	text-align: center;
@@ -55,60 +65,70 @@ button {
 	font-family: 'Knewave', cursive;
 	font-size: 40px;
 	color: #D6B03E;
-	bottom:0;
 	left:0;
-	float: left;
 	border: none;
-	background-color: #4D2F1A;
-	height:150px;
+	height: 100%;
 	width: 50%;
 	position: absolute;
-	-webkit-border-top-right-radius: 10px;
-	-webkit-border-bottom-right-radius: 10px;
-	-moz-border-radius-topright: 10px;
-	-moz-border-radius-bottomright: 10px;
-	border-top-right-radius: 10px;
-	border-bottom-right-radius: 10px;
-	-webkit-box-shadow: 0px 0px 0 rgb(54,24,3),1px 1px 0 rgb(49,19,-2),2px 2px 0 rgb(44,14,-7),3px 3px 0 rgb(39,9,-12),4px 4px 0 rgb(33,3,-18),5px 5px 0 rgb(28,-2,-23),6px 6px 0 rgb(23,-7,-28),7px 7px 0 rgb(18,-12,-33),8px 8px 0 rgb(13,-17,-38), 9px 9px 0 rgb(8,-22,-43),10px 10px 9px rgba(0,0,0,0.3),10px 10px 1px rgba(0,0,0,0.5),0px 0px 9px rgba(0,0,0,.2), 0 0 40px rgba(0, 0, 0, 0.2) inset;
-    -moz-box-shadow: 0px 0px 0 rgb(54,24,3),1px 1px 0 rgb(49,19,-2),2px 2px 0 rgb(44,14,-7),3px 3px 0 rgb(39,9,-12),4px 4px 0 rgb(33,3,-18),5px 5px 0 rgb(28,-2,-23),6px 6px 0 rgb(23,-7,-28),7px 7px 0 rgb(18,-12,-33),8px 8px 0 rgb(13,-17,-38), 9px 9px 0 rgb(8,-22,-43),10px 10px 9px rgba(0,0,0,0.3),10px 10px 1px rgba(0,0,0,0.5),0px 0px 9px rgba(0,0,0,.2), 0 0 40px rgba(0, 0, 0, 0.2) inset;
-    box-shadow: 0px 0px 0 rgb(54,24,3),1px 1px 0 rgb(49,19,-2),2px 2px 0 rgb(44,14,-7),3px 3px 0 rgb(39,9,-12),4px 4px 0 rgb(33,3,-18),5px 5px 0 rgb(28,-2,-23),6px 6px 0 rgb(23,-7,-28),7px 7px 0 rgb(18,-12,-33),8px 8px 0 rgb(13,-17,-38), 9px 9px 0 rgb(8,-22,-43),10px 10px 9px rgba(0,0,0,0.3),10px 10px 1px rgba(0,0,0,0.5),0px 0px 9px rgba(0,0,0,.2), 0 0 40px rgba(0, 0, 0, 0.2) inset;
+    background: #825c42;
+    background: -webkit-gradient(linear, left top, left bottom, from(#4d2f1a), to(#6b4c37));
+    background: -webkit-linear-gradient(top, #4d2f1a, #6b4c37);
+    background: -moz-linear-gradient(top, #4d2f1a, #6b4c37);
+    background: -ms-linear-gradient(top, #4d2f1a, #6b4c37);
+    background: -o-linear-gradient(top, #4d2f1a, #6b4c37);
     text-shadow: 0px 0px 0 rgb(159,121,7),1px 1px 0 rgb(122,84,-30),2px 2px 0 rgb(85,47,-67),3px 3px 0 rgb(48,10,-104), 4px 4px 0 rgb(11,-27,-141),5px 5px 4px rgba(0,0,0,0.3),5px 5px 1px rgba(0,0,0,0.5),0px 0px 4px rgba(0,0,0,.2);
 }
-#drop_down {
+select {
 	font-family: 'Knewave', cursive;
 	font-size: 40px;
+	text-align: center;
+	text-transform: uppercase;
+	vertical-align: middle;
+	padding-top: 30px;
 	color: #D6B03E;
-	bottom:0;
 	right:0;
 	float: right;
 	border: none;
-	background-color: #4D2F1A;
-	height:150px;
-	width: 49.5%;
+	width: 50%;
+	height: 100%;
 	position: absolute;
-	-webkit-border-top-left-radius: 10px;
-	-webkit-border-bottom-left-radius: 10px;
-	-moz-border-radius-topleft: 10px;
-	-moz-border-radius-bottomleft: 10px;
-	border-top-left-radius: 10px;
-	border-bottom-left-radius: 10px;
-	-webkit-box-shadow: 0px 0px 0 rgb(54,24,3),1px 1px 0 rgb(49,19,-2),2px 2px 0 rgb(44,14,-7),3px 3px 0 rgb(39,9,-12),4px 4px 0 rgb(33,3,-18),5px 5px 0 rgb(28,-2,-23),6px 6px 0 rgb(23,-7,-28),7px 7px 0 rgb(18,-12,-33),8px 8px 0 rgb(13,-17,-38), 9px 9px 0 rgb(8,-22,-43),10px 10px 9px rgba(0,0,0,0.3),10px 10px 1px rgba(0,0,0,0.5),0px 0px 9px rgba(0,0,0,.2), 0 0 40px rgba(0, 0, 0, 0.2) inset;
-    -moz-box-shadow: 0px 0px 0 rgb(54,24,3),1px 1px 0 rgb(49,19,-2),2px 2px 0 rgb(44,14,-7),3px 3px 0 rgb(39,9,-12),4px 4px 0 rgb(33,3,-18),5px 5px 0 rgb(28,-2,-23),6px 6px 0 rgb(23,-7,-28),7px 7px 0 rgb(18,-12,-33),8px 8px 0 rgb(13,-17,-38), 9px 9px 0 rgb(8,-22,-43),10px 10px 9px rgba(0,0,0,0.3),10px 10px 1px rgba(0,0,0,0.5),0px 0px 9px rgba(0,0,0,.2), 0 0 40px rgba(0, 0, 0, 0.2) inset;
-    box-shadow: 0px 0px 0 rgb(54,24,3),1px 1px 0 rgb(49,19,-2),2px 2px 0 rgb(44,14,-7),3px 3px 0 rgb(39,9,-12),4px 4px 0 rgb(33,3,-18),5px 5px 0 rgb(28,-2,-23),6px 6px 0 rgb(23,-7,-28),7px 7px 0 rgb(18,-12,-33),8px 8px 0 rgb(13,-17,-38), 9px 9px 0 rgb(8,-22,-43),10px 10px 9px rgba(0,0,0,0.3),10px 10px 1px rgba(0,0,0,0.5),0px 0px 9px rgba(0,0,0,.2), 0 0 40px rgba(0, 0, 0, 0.2) inset;
+	background-color: #4D2F1A;
+	background: -webkit-gradient(linear, left top, left bottom, from(#4d2f1a), to(#6b4c37));
+    background: -webkit-linear-gradient(top, #4d2f1a, #6b4c37);
+    background: -moz-linear-gradient(top, #4d2f1a, #6b4c37);
+    background: -ms-linear-gradient(top, #4d2f1a, #6b4c37);
+    background: -o-linear-gradient(top, #4d2f1a, #6b4c37);
     text-shadow: 0px 0px 0 rgb(159,121,7),1px 1px 0 rgb(122,84,-30),2px 2px 0 rgb(85,47,-67),3px 3px 0 rgb(48,10,-104), 4px 4px 0 rgb(11,-27,-141),5px 5px 4px rgba(0,0,0,0.3),5px 5px 1px rgba(0,0,0,0.5),0px 0px 4px rgba(0,0,0,.2);
-}n-left: -150px;
 }
 button:hover {
 	cursor: pointer;
 	color: #E3BF54;
+	background: -webkit-gradient(linear, left top, left bottom,  from(#4d2f1a), to(#825c42));
+    background: -webkit-linear-gradient(top, #4d2f1a, #825c42);
+    background: -moz-linear-gradient(top, #4d2f1a, #825c42);
+    background: -ms-linear-gradient(top, #4d2f1a, #825c42);
+    background: -o-linear-gradient(top, #4d2f1a, #825c42);
 }
 button:active {
 	color: #E3BF54;
-	margin-top: 4px;
-	margin-left: -144px;
-	-webkit-box-shadow: 0px 0px 0 rgb(45,15,-6),1px 1px 0 rgb(36,6,-15),2px 2px 0 rgb(28,-2,-23),3px 3px 0 rgb(19,-11,-32),4px 4px 0 rgb(10,-20,-41),5px 5px 0 rgb(1,-29,-50), 6px 6px 0 rgb(-8,-38,-59),7px 7px 6px rgba(0,0,0,0.3),7px 7px 1px rgba(0,0,0,0.5),0px 0px 6px rgba(0,0,0,.2);
-	-moz-box-shadow:0px 0px 0 rgb(45,15,-6),1px 1px 0 rgb(36,6,-15),2px 2px 0 rgb(28,-2,-23),3px 3px 0 rgb(19,-11,-32),4px 4px 0 rgb(10,-20,-41),5px 5px 0 rgb(1,-29,-50), 6px 6px 0 rgb(-8,-38,-59),7px 7px 6px rgba(0,0,0,0.3),7px 7px 1px rgba(0,0,0,0.5),0px 0px 6px rgba(0,0,0,.2);
-	box-shadow:0px 0px 0 rgb(45,15,-6),1px 1px 0 rgb(36,6,-15),2px 2px 0 rgb(28,-2,-23),3px 3px 0 rgb(19,-11,-32),4px 4px 0 rgb(10,-20,-41),5px 5px 0 rgb(1,-29,-50), 6px 6px 0 rgb(-8,-38,-59),7px 7px 6px rgba(0,0,0,0.3),7px 7px 1px rgba(0,0,0,0.5),0px 0px 6px rgba(0,0,0,.2);
+	margin-left: 2px;
+	padding-top: 3px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+}
+select:hover {
+	cursor: pointer;
+	color: #E3BF54;
+	background: -webkit-gradient(linear, left top, left bottom,  from(#4d2f1a), to(#825c42));
+    background: -webkit-linear-gradient(top, #4d2f1a, #825c42);
+    background: -moz-linear-gradient(top, #4d2f1a, #825c42);
+    background: -ms-linear-gradient(top, #4d2f1a, #825c42);
+    background: -o-linear-gradient(top, #4d2f1a, #825c42);
+}
+select:active {
+	color: #E3BF54;
+	padding-left: 2px;
+	padding-top: 33px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
 }
 @media screen and (max-width:1280px){
     p {
@@ -229,16 +249,18 @@ window.onload = function() {
   	<div id="joke_box">
 	  	<p id="joke">Yo mama so...</p>
 	</div>
-	<div id="button_box">
-		<button type="button" onclick="getJoke()">GENERATE!</button>
-		<select id="drop_down"></select> 
-		<script>
-			function getJoke() {
-		    	$.getJSON("http://127.0.0.1:5000/api/joke/", function(data) {
-		        	document.getElementById("joke").innerHTML = data.joke[0];
-		        });
-			}
-		</script>
+	<div id ="bottom_bar">
+		<div id="button_box">
+			<button type="button" onclick="getJoke()">GENERATE!</button>
+			<script>
+				function getJoke() {
+			    	$.getJSON("http://127.0.0.1:5000/api/joke/", function(data) {
+			        	document.getElementById("joke").innerHTML = data.joke[0];
+			        });
+				}
+			</script>
+			<select id="drop_down"></select> 
+		</div>
 	</div>
 	<div id="footer">
 		<a href="https://github.com/kreamt/yoMamaGen" target="_blank">View Source Code</a> |
