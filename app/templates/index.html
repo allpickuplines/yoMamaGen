@@ -10,16 +10,17 @@ body {
 	background-color: #964929;
 	color: #FFFFFF;
     height:100%;
+    width: 100%;
+    margin: 0%;
 }
 #title_box {
 	background-color: #4D2F1A;
-	width: 100%;
 	position: absolute;
+    width: 100%;
 	top:0;
 	left:0;
 	float: left;
 	height: 10%;
-	padding-left: 1%;
     display: table;
 	-webkit-box-shadow:0 3px 4px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.2) inset;
     -moz-box-shadow:0 3px 4px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.2) inset;
@@ -30,9 +31,9 @@ body {
 	background-color: #4D2F1A;
 	width: 100%;
     float: left;
+    bottom:0;
     left: 0;
 	position: absolute;
-	bottom:0;
 	height: 15%;
 }
 #footer {
@@ -42,7 +43,7 @@ body {
     bottom: 20px;
 }
 #joke_box {
-    height: 70%;
+    height: 75%;
     width: 100%;
     position: absolute;
     display: table;
@@ -63,7 +64,7 @@ h1 {
 	font-family: 'Sigmar One', cursive;
 	font-size: 30px;
 	color: #F7E240;
-	width: 100%;
+    padding-left: 1%;
 	text-shadow: 0px 0px 0 rgb(195,174,12),1px 1px 0 rgb(152,131,-31),2px 2px 0 rgb(110,89,-73),3px 3px 0 rgb(67,46,-116),4px 4px 0 rgb(25,4,-158),5px 5px 0 rgb(-18,-39,-201), 6px 6px 0 rgb(-60,-81,-243),7px 7px 6px rgba(0,0,0,1),7px 7px 1px rgba(0,0,0,0.5),0px 0px 6px rgba(0,0,0,.2);
 }
 a {
@@ -137,7 +138,7 @@ select {
 <body>
 	<div id="top_bar">
 		<div id="title_box">
-  			<h1>YOMAMAGEN.COM</h2>
+  			<h1>YOMAMAGEN.COM</h1>
   		</div>
   	</div>
   	<div id="joke_box">
@@ -150,11 +151,11 @@ select {
 			<button type="button" id="cat_button" onclick="getCategories()">CATEGORIES</button>
 		</div>
 	</div>
-	<div id="footer">
+	<!-- <div id="footer">
 		<a href="https://github.com/kreamt/yoMamaGen" target="_blank">View Source Code</a> |
 		<a>Mobile App (Coming Soon!)</a> |
 		<a href="mailto:contact@yomamagen.com">Contact Us</a>
-	</div>
+	</div> -->
 </body>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
 </script>
