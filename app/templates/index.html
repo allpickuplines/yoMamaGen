@@ -251,7 +251,7 @@ window.onload = function() {
         var categories = []
         $.each(data.categories, function(key, val) {
             var dropDown = document.getElementById('drop_down');
-            option = document.createElement("option");
+            option = document.createElement('option');
             option.value = val;
             option.innerHTML = val;
             dropDown.appendChild(option);
@@ -259,8 +259,14 @@ window.onload = function() {
     });
 }
 function getJoke() {
-    $.getJSON("http://127.0.0.1:5000/api/joke/", function(data) {
-        document.getElementById("joke").innerHTML = data.joke[0];
+    var category = document.getElementById('cat_button').innerHTML;
+    if (category == 'CATEGORIES') {
+        url = 'http://127.0.0.1:5000/api/joke/';
+    } else {
+        url = 'http://127.0.0.1:5000/api/joke/category/' + category;
+    }
+    $.getJSON(url, function(data) {
+        document.getElementById('joke').innerHTML = data.joke[0];
     });
 }
 function getCategories() {
@@ -271,7 +277,6 @@ function getCategories() {
         $('#drop_down').css('border','none');
         var dropDown = document.getElementById("drop_down");
         var category = dropDown.options[dropDown.selectedIndex].value;
-        console.log(category);
         document.getElementById('cat_button').innerHTML = category;
     } else {
         $('#drop_down').attr('size',6);
