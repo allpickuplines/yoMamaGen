@@ -219,22 +219,6 @@ select {
 	}
 }
 </style>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
-</script>
-<script>
-window.onload = function() {
-	$.getJSON("http://127.0.0.1:5000/api/categories/", function(data) {
-		var categories = []
-		$.each(data.categories, function(key, val) {
-			var dropDown = document.getElementById('drop_down');
-			option = document.createElement("option");
-        	option.value = val;
-        	option.innerHTML = val;
-        	dropDown.appendChild(option);
-		})
-	});
-}
-</script>
 </head>
 <title>Yo Mama Gen! | Home of the worlds largest collection of Yo Mama jokes!</title>
 <body>
@@ -249,40 +233,8 @@ window.onload = function() {
 	<div id ="bottom_bar">
 		<div id="button_box">
 			<button type="button" id="gen_button" onclick="getJoke()">GENERATE!</button>
-			<script>
-				function getJoke() {
-                    $.getJSON("http://127.0.0.1:5000/api/joke/", function(data) {
-                        document.getElementById("joke").innerHTML = data.joke[0];
-                    });
-                }
-			</script>
-			<select id="drop_down" onclick="getCategory()"></select> 
+			<select id="drop_down" onclick="getCategories()"></select> 
 			<button type="button" id="cat_button" onclick="getCategories()">CATEGORIES</button>
-			<script>
-				function getCategories() {
-                    if ($('#drop_down').css('bottom') != '-120px') {
-                        $('#drop_down').attr('size',1);
-                        $('#drop_down').css('bottom','-120px');
-                        $('#drop_down').css('height','0%');
-                        $('#drop_down').css('border','none');
-                    } else {
-    			    	$('#drop_down').attr('size',6);
-    		        	$('#drop_down').css('bottom','120px');
-    		        	$('#drop_down').css('height','240px');
-                        $('#drop_down').css('border','solid');
-                    }
-		        }
-                function getCategory() {
-                    $('#drop_down').attr('size',1);
-                    $('#drop_down').css('bottom','-120px');
-                    $('#drop_down').css('height','0%');
-                    $('#drop_down').css('border','none');
-                    var dropDown = document.getElementById("drop_down");
-                    var category = dropDown.options[dropDown.selectedIndex].value;
-                    console.log(category);
-                    document.getElementById('cat_button').innerHTML = category;
-                }
-			</script>
 		</div>
 	</div>
 	<div id="footer">
@@ -291,4 +243,42 @@ window.onload = function() {
 		<a href="mailto:contact@yomamagen.com">Contact Us</a>
 	</div>
 </body>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+</script>
+<script>
+window.onload = function() {
+    $.getJSON("http://127.0.0.1:5000/api/categories/", function(data) {
+        var categories = []
+        $.each(data.categories, function(key, val) {
+            var dropDown = document.getElementById('drop_down');
+            option = document.createElement("option");
+            option.value = val;
+            option.innerHTML = val;
+            dropDown.appendChild(option);
+        })
+    });
+}
+function getJoke() {
+    $.getJSON("http://127.0.0.1:5000/api/joke/", function(data) {
+        document.getElementById("joke").innerHTML = data.joke[0];
+    });
+}
+function getCategories() {
+    if ($('#drop_down').css('bottom') != '-120px') {
+        $('#drop_down').attr('size',1);
+        $('#drop_down').css('bottom','-120px');
+        $('#drop_down').css('height','0%');
+        $('#drop_down').css('border','none');
+        var dropDown = document.getElementById("drop_down");
+        var category = dropDown.options[dropDown.selectedIndex].value;
+        console.log(category);
+        document.getElementById('cat_button').innerHTML = category;
+    } else {
+        $('#drop_down').attr('size',6);
+        $('#drop_down').css('bottom','120px');
+        $('#drop_down').css('height','240px');
+        $('#drop_down').css('border','solid');
+    }
+}
+</script>
 </html>
