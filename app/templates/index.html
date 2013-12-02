@@ -9,6 +9,7 @@
 body {
 	background-color: #964929;
 	color: #FFFFFF;
+    height:100%;
 }
 #title_box {
 	background-color: #4D2F1A;
@@ -17,9 +18,8 @@ body {
 	top:0;
 	left:0;
 	float: left;
-	height: 85px;
+	height: 10%;
 	padding-left: 1%;
-	margin-bottom: 20px;
 	-webkit-box-shadow:0 3px 4px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.2) inset;
     -moz-box-shadow:0 3px 4px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.2) inset;
     box-shadow:0 3px 4px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.2) inset;
@@ -32,13 +32,29 @@ body {
     left: 0;
 	position: absolute;
 	bottom:0;
-	height: 120px;
+	height: 15%;
 }
 #footer {
 	width: 100%;
 	text-align: center;
 	position: absolute;
     bottom: 20px;
+}
+#joke_box {
+    height: 70%;
+    width: 100%;
+    position: absolute;
+    display: table;
+}
+p {
+    color: #BDAD44;
+    font-family: 'Slackey', cursive;
+    font-size: 60px;
+    text-shadow: 1px 1px #141203;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    text-shadow:0px 0px 0 rgb(165,149,44),1px 1px 0 rgb(150,134,29),2px 2px 0 rgb(136,120,15),3px 3px 0 rgb(122,106,1),4px 4px 0 rgb(107,91,-14),5px 5px 0 rgb(93,77,-28),6px 6px 0 rgb(79,63,-42),7px 7px 0 rgb(64,48,-57),8px 8px 0 rgb(50,34,-71), 9px 9px 0 rgb(36,20,-85),10px 10px 9px rgba(0,0,0,0.6),10px 10px 1px rgba(0,0,0,0.5),0px 0px 9px rgba(0,0,0,.2);
 }
 h1 {
 	font-family: 'Sigmar One', cursive;
@@ -50,16 +66,6 @@ h1 {
 a {
 	font-family: 'Open Sans', sans-serif;
 	color: #FFFFFF;
-}
-p {
-	color: #BDAD44;
-	font-family: 'Slackey', cursive;
-	font-size: 60px;
-	text-shadow: 1px 1px #141203;
-	position: fixed;
-  	top: 70px;
-  	text-align: center;
-	text-shadow:0px 0px 0 rgb(165,149,44),1px 1px 0 rgb(150,134,29),2px 2px 0 rgb(136,120,15),3px 3px 0 rgb(122,106,1),4px 4px 0 rgb(107,91,-14),5px 5px 0 rgb(93,77,-28),6px 6px 0 rgb(79,63,-42),7px 7px 0 rgb(64,48,-57),8px 8px 0 rgb(50,34,-71), 9px 9px 0 rgb(36,20,-85),10px 10px 9px rgba(0,0,0,0.6),10px 10px 1px rgba(0,0,0,0.5),0px 0px 9px rgba(0,0,0,.2);
 }
 button {
     font-family: 'Knewave', cursive;
@@ -115,11 +121,6 @@ select {
 	height: 0%;
 	position: absolute;
 	background-color: #4D2F1A;
-	background: -webkit-gradient(linear, left top, left bottom, from(#4d2f1a), to(#6b4c37));
-    background: -webkit-linear-gradient(top, #4d2f1a, #6b4c37);
-    background: -moz-linear-gradient(top, #4d2f1a, #6b4c37);
-    background: -ms-linear-gradient(top, #4d2f1a, #6b4c37);
-    background: -o-linear-gradient(top, #4d2f1a, #6b4c37);
     text-shadow: 0px 0px 0 rgb(159,121,7),1px 1px 0 rgb(122,84,-30),2px 2px 0 rgb(85,47,-67),3px 3px 0 rgb(48,10,-104), 4px 4px 0 rgb(11,-27,-141),5px 5px 4px rgba(0,0,0,0.3),5px 5px 1px rgba(0,0,0,0.5),0px 0px 4px rgba(0,0,0,.2);
 }
 #drop_down {
@@ -127,97 +128,6 @@ select {
 }
 :focus {outline:none;}
 ::-moz-focus-inner {border:0;}
-@media screen and (max-width:1280px){
-    p {
-    	font-size: 50px;
-    }
-}
-@media screen and (max-width:1080px) {
-    p {
-    	font-size: 45px;
-    }
-}
-@media screen and (max-width:840px){
-	p {
-		font-size: 40px;  
-	}
-}
-@media screen and (max-width:460px){
-	body {
-		font-size: 12px;
-	}
-    p {
-		font-size: 35px;  
-	}
-	a {
-		font-size: 12px;
-	}
-}
-@media screen and (max-width:320px){
-	body {
-		font-size: 12px;
-	}
-	#title_box {
-		height: 60px;
-	}
-	#drop_down {
-		width: 152px;
-		margin-left: -75px;
-		bottom: 90px;
-	}
-	h1 {
-		font-size: 20px;
-	}
-    p {
-		font-size: 20px;
-		top: 50px;
-	}
-	a {
-		font-size: 8px;
-	}
-	button {
-		font-size: 20px;
-		width: 150px;
-		margin-left: -75px;
-		bottom: 50px;
-	}
-	button:active {
-	margin-left: -71px;
-	}
-}
-@media screen and (max-height:600px){
-	body {
-		font-size: 12px;
-	}
-	#title_box {
-		height: 60px;
-	}
-	#drop_down {
-		width: 152px;
-		margin-left: -75px;
-		bottom: 90px;
-	}
-	h1 {
-		font-size: 20px;
-	}
-    p {
-		font-size: 20px;
-		top: 50px;
-		text-shadow:0px 0px 0 rgb(146,130,25),1px 1px 0 rgb(112,96,-9),2px 2px 0 rgb(79,63,-42), 3px 3px 0 rgb(46,30,-75),4px 4px 3px rgba(0,0,0,0.6),4px 4px 1px rgba(0,0,0,0.5),0px 0px 3px rgba(0,0,0,.2);
-	}
-	a {
-		font-size: 8px;
-	}
-	button {
-		font-size: 20px;
-		width: 150px;
-		margin-left: -75px;
-		bottom: 50px;
-	}
-	button:active {
-	margin-left: -71px;
-	}
-}
 </style>
 </head>
 <title>Yo Mama Gen! | Home of the worlds largest collection of Yo Mama jokes!</title>
@@ -280,7 +190,7 @@ function getCategories() {
         document.getElementById('cat_button').innerHTML = category;
     } else {
         $('#drop_down').attr('size',6);
-        $('#drop_down').css('bottom','120px');
+        $('#drop_down').css('bottom','100%');
         $('#drop_down').css('height','240px');
         $('#drop_down').css('border','solid');
     }
