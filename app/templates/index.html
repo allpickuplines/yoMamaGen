@@ -26,6 +26,12 @@ body {
     -moz-box-shadow:0 3px 4px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.2) inset;
     box-shadow:0 3px 4px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.2) inset;
 }
+#nav {
+    z-index: 10;
+    display: table-cell;
+    vertical-align: middle;
+    right: 0;
+}
 #bottom_bar {
 	width: 100%;    
     bottom:0;
@@ -46,6 +52,8 @@ p {
     display: table-cell;
     vertical-align: middle;
     text-align: center;
+    padding-left: 1%;
+    padding-right: 1%;
     text-shadow:0px 0px 0 rgb(165,149,44),1px 1px 0 rgb(150,134,29),2px 2px 0 rgb(136,120,15),3px 3px 0 rgb(122,106,1),4px 4px 0 rgb(107,91,-14),5px 5px 0 rgb(93,77,-28),6px 6px 0 rgb(79,63,-42),7px 7px 0 rgb(64,48,-57),8px 8px 0 rgb(50,34,-71), 9px 9px 0 rgb(36,20,-85),10px 10px 9px rgba(0,0,0,0.6),10px 10px 1px rgba(0,0,0,0.5),0px 0px 9px rgba(0,0,0,.2);
 }
 h1 {
@@ -134,11 +142,14 @@ select {
 </head>
 <title>Yo Mama Gen! | Home of the worlds largest collection of Yo Mama jokes!</title>
 <body>
-	<div id="top_bar">
-		<div id="title_box">
-  			<h1>YOMAMAGEN.COM</h1>
-  		</div>
-  	</div>
+	<div id="title_box">
+		<h1>YOMAMAGEN.COM</h1>
+        <div id="nav">
+            <a href="https://github.com/kreamt/yoMamaGen" target="_blank">View Source Code</a> |
+            <a>Mobile App (Coming Soon!)</a> |
+            <a href="mailto:contact@yomamagen.com">Contact Us</a>
+        </div>
+	</div>
   	<div id="joke_box">
 	  	<p id="joke">Yo mama so...</p>
 	</div>
@@ -149,11 +160,6 @@ select {
 			<button type="button" id="cat_button" onclick="getCategories()">CATEGORIES</button>
 		</div>
 	</div>
-	<!-- <div id="footer">
-		<a href="https://github.com/kreamt/yoMamaGen" target="_blank">View Source Code</a> |
-		<a>Mobile App (Coming Soon!)</a> |
-		<a href="mailto:contact@yomamagen.com">Contact Us</a>
-	</div> -->
 </body>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
 </script>
