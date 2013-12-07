@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href='http://fonts.googleapis.com/css?family=Sigmar+One' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Luckiest+Guy' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Knewave' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Electrolize' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Mouse+Memoirs' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=McLaren' rel='stylesheet' type='text/css'>
 <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <title>Yo Mama Gen! | Home of the worlds largest collection of Yo Mama jokes!</title>
@@ -16,7 +17,7 @@
         </div>
         <div id="nav">
             <ul>
-                <li><a href="#" id="api_docs_button">Docs</a></li>
+                <li><a onclick="openDocs()" id="api_docs_button">Docs</a></li>
                 <li><a href="mailto:contact@yomamagen.com">Contact</a></li>
                 <li><a href="https://github.com/kreamt/yoMamaGen" target="_blank">Source</a></li>
             </ul>
@@ -32,7 +33,17 @@
 			<button type="button" id="cat_button" onclick="getCategories()">CATEGORIES</button>
 		</div>
 	</div>
-    <div id="api_docs_content">STUFF</div>
+    <div id="api_docs_content">
+        <h2>API DOCUMENTATION</h2>
+        <p>Get all Jokes:</p>
+        <a href="http://yomamagen.com/api/jokes/">http://yomamagen.com/api/jokes/</a>
+        <p>Get all Jokes by Category:</p>
+        <a href="http://yomamagen.com/api/jokes/category/Ugly">http://yomamagen.com/api/jokes/category/&lt;cateogry name&gt;</a>
+        <p>Get Random Joke:</p>
+        <a href="http://yomamagen.com/api/joke/">http://yomamagen.com/api/jokes/</a>
+        <p>Get Random Joke by Cateogy:</p>
+        <a href="http://yomamagen.com/api/joke/category/Ugly">http://yomamagen.com/api/jokes/category/&lt;cateogry name&gt;</a>
+    </div>
 </body>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
 </script>
@@ -77,9 +88,16 @@ function getCategories() {
         $('#drop_down').css('border','solid');
     }
 }
-$('#api_docs_button').click(function (e) {
-        $('#api_docs_content').modal();
-        return false;
-    });
+function openDocs() {
+    $('#api_docs_content').modal();
+    return false;
+}
+$('body').click(function(evt){
+       if(evt.target.id == "api_docs_content"
+        || evt.target.id == "api_docs_button")
+          return;
+      $.modal.close();
+
+});
 </script>
 </html>
