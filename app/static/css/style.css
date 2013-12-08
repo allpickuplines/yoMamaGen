@@ -41,7 +41,6 @@ body {
 }
 #nav ul {
     text-align: center;
-    height: 100%;
     width: auto;
     margin: 0;
     padding: 0;
@@ -49,7 +48,6 @@ body {
 }
 #nav li {
     float: right;
-    height: 100%;
     width: 100px;
 }
 #nav a {
@@ -66,7 +64,7 @@ body {
     text-decoration: underline;
 }
 #joke_box {
-    height: 75%;
+    height: 80%;
     width: 100%;
     position: absolute;
     display: table;
@@ -197,3 +195,64 @@ a:hover {
 }
 :focus {outline:none;}
 ::-moz-focus-inner {border:0;}
+
+@media (max-width: 610px) {
+    #nav li {
+        float: none;
+    }
+    #nav a {
+    line-height: 15px;
+    }
+}
+
+@media (max-width: 600px), (max-height: 600px) {
+    #joke_box {
+        height: 100%;
+    }
+    #joke_box p {
+        font-size: 35px;
+        text-shadow:1px 1px 0 rgb(107,91,-14),2px 2px 0 rgb(93,77,-28),3px 3px 0 rgb(79,63,-42),4px 4px 0 rgb(64,48,-57),5px 5px 0 rgb(50,34,-71), 6px 6px 0 rgb(36,20,-85),7px 7px 6px rgba(0,0,0,0.6),7px 7px 1px rgba(0,0,0,0.5),0px 0px 6px rgba(0,0,0,.2);
+    }
+    #bottom_bar button {
+        font-size: 25px;
+    }
+    #bottom_bar select {
+        font-size: 25px;
+    }
+    #simplemodal-container {
+        height:240px; 
+        width:440px; 
+    }
+    #simplemodal-container h2 {
+        font-size: 15px;
+    }
+    #simplemodal-container p {
+        font-size:12px; 
+    }
+    #simplemodal-container a {
+        font-size:10px;
+    }
+}
+
+@media (max-width: 600px) and (max-height: 600px) {
+    #joke_box {
+        height: 100%;
+    }
+    #joke_box p {
+        font-size: 25px;
+        text-shadow:1px 1px 0 rgb(107,91,-14),2px 2px 0 rgb(93,77,-28),3px 3px 0 rgb(79,63,-42),4px 4px 0 rgb(64,48,-57),5px 5px 0 rgb(50,34,-71), 6px 6px 0 rgb(36,20,-85),7px 7px 6px rgba(0,0,0,0.6),7px 7px 1px rgba(0,0,0,0.5),0px 0px 6px rgba(0,0,0,.2);
+    }
+    #bottom_bar button {
+        font-size: 20px;
+    }
+    #bottom_bar select {
+        font-size: 20px;
+    }
+    #title_box h1 {
+        font-size: 20px;
+    }
+    #nav a {
+        font-size: 15px;
+        line-height: 10px;
+    }
+}
