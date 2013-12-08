@@ -183,6 +183,7 @@ body {
     font-size:20px; 
     margin-left: 6px;
     margin-bottom: 0;
+        text-shadow: 1px 1px 0 rgb(-18,-39,-201), 2px 2px 0 rgb(-60,-81,-243),3px 3px 2px rgba(0,0,0,1),3px 3px 1px rgba(0,0,0,0.5),0px 0px 1px rgba(0,0,0,.2);
 }
 #simplemodal-container a {
     font-family: 'McLaren', cursive;
@@ -228,7 +229,7 @@ a:hover {
     }
     #simplemodal-container p {
         font-size:12px; 
-    }
+        text-shadow: 1px 1px 0 rgb(-18,-39,-201), 2px 2px 0 rgb(-60,-81,-243),3px 3px 2px rgba(0,0,0,1),3px 3px 1px rgba(0,0,0,0.5),0px 0px 1px rgba(0,0,0,.2);    }
     #simplemodal-container a {
         font-size:10px;
     }
@@ -240,7 +241,6 @@ a:hover {
     }
     #joke_box p {
         font-size: 25px;
-        text-shadow:1px 1px 0 rgb(107,91,-14),2px 2px 0 rgb(93,77,-28),3px 3px 0 rgb(79,63,-42),4px 4px 0 rgb(64,48,-57),5px 5px 0 rgb(50,34,-71), 6px 6px 0 rgb(36,20,-85),7px 7px 6px rgba(0,0,0,0.6),7px 7px 1px rgba(0,0,0,0.5),0px 0px 6px rgba(0,0,0,.2);
     }
     #bottom_bar button {
         font-size: 20px;
