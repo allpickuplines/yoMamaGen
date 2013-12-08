@@ -1,4 +1,7 @@
 window.onload = function() {
+    $.getJSON("http://127.0.0.1:5000/api/joke/", function(data) {
+        document.getElementById('joke').innerHTML = data.joke[0];
+    });
     $.getJSON("http://127.0.0.1:5000/api/categories/", function(data) {
         var categories = []
         $.each(data.categories, function(key, val) {
