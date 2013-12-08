@@ -56,7 +56,7 @@ body {
     font-family: 'Mouse Memoirs', sans-serif;
     font-size: 22px;
     color: #DEC9B6;
-    line-height: 56px;
+    line-height: 62px;
     display: inline-block;
     padding:5px;
     text-decoration: none;
@@ -166,9 +166,9 @@ body {
     width:600px; 
     background-color:#5C3921;
     border:4px solid #F7E240; 
-    -webkit-box-shadow:0 0 40px rgba(0, 0, 0, 0.8) inset;
-    -moz-box-shadow:0 0 40px rgba(0, 0, 0, 0.8) inset;
-    box-shadow:0 0 40px rgba(0, 0, 0, 0.8) inset;
+    -webkit-box-shadow:0 3px 4px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.8) inset;
+    -moz-box-shadow:0 3px 4px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.8) inset;
+    box-shadow:0 3px 4px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.8) inset;
 }
 #simplemodal-container h2 {
     font-family: 'Luckiest Guy', cursive;
