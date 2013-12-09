@@ -203,6 +203,13 @@ a:hover {
 :focus {outline:none;}
 ::-moz-focus-inner {border:0;}
 
+@media (max-width: 630px) {
+    #joke_box p {
+        font-size: 35px;
+        text-shadow:1px 1px 0 rgb(107,91,-14),2px 2px 0 rgb(93,77,-28),3px 3px 0 rgb(79,63,-42),4px 4px 0 rgb(64,48,-57),5px 5px 0 rgb(50,34,-71), 6px 6px 0 rgb(36,20,-85),7px 7px 6px rgba(0,0,0,0.6),7px 7px 1px rgba(0,0,0,0.5),0px 0px 6px rgba(0,0,0,.2);
+    }
+}
+
 @media (max-width: 610px) {
     #joke_box {
         height: 100%;
@@ -220,10 +227,6 @@ a:hover {
 @media (max-width: 600px), (max-height: 600px) {
     #joke_box {
         height: 100%;
-    }
-    #joke_box p {
-        font-size: 35px;
-        text-shadow:1px 1px 0 rgb(107,91,-14),2px 2px 0 rgb(93,77,-28),3px 3px 0 rgb(79,63,-42),4px 4px 0 rgb(64,48,-57),5px 5px 0 rgb(50,34,-71), 6px 6px 0 rgb(36,20,-85),7px 7px 6px rgba(0,0,0,0.6),7px 7px 1px rgba(0,0,0,0.5),0px 0px 6px rgba(0,0,0,.2);
     }
     #bottom_bar button {
         font-size: 25px;
