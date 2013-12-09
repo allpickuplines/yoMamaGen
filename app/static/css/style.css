@@ -63,6 +63,12 @@ body {
     color: #FFFFFF;
     text-decoration: underline;
 }
+#nav #list_icon {
+    font-size: 0px;
+    position: absolute;
+    float: right;
+    margin-right: 10px;
+}
 #joke_box {
     height: 80%;
     width: 100%;
@@ -198,11 +204,16 @@ a:hover {
 ::-moz-focus-inner {border:0;}
 
 @media (max-width: 610px) {
-    #nav li {
-        float: none;
+    #joke_box {
+        height: 100%;
     }
     #nav a {
-    line-height: 15px;
+        display: none;
+    }
+    #nav #list_icon {
+        display: inline-block;
+        position: relative;
+        font-size: 28px;
     }
 }
 

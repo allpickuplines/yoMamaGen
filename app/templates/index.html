@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel='stylesheet' type='text/css' href="{{ url_for('static', filename='css/style.css') }}">
 <link href='http://fonts.googleapis.com/css?family=Luckiest+Guy' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Knewave' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Mouse+Memoirs' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=McLaren' rel='stylesheet' type='text/css'>
-<link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome-4.0.3/css/font-awesome.min.css') }}">
 </head>
 <title>Yo Mama Gen! | Yo Mama Jokes Generator</title>
 <body>
@@ -16,6 +17,7 @@
 		  <h3>YOMAMAGEN.COM</h3>
         </div>
         <div id="nav">
+            <a id="list_icon"><i class="fa fa-list"></i></a>
             <ul>
                 <li><a onclick="openDocs()" id="api_docs_button">Docs</a></li>
                 <li><a href="mailto:contact@yomamagen.com">Contact</a></li>
