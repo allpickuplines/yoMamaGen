@@ -9,12 +9,12 @@ body {
     background-color: #5C3921;
     position: absolute;
     width: 100%;
-    height: 10%;
+    height: 60px;
     top:0;
     left:0;
     float: left;
     display: table;
-    z-index: 1;
+    z-index: 2;
     -webkit-box-shadow:0 3px 4px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.2) inset;
     -moz-box-shadow:0 3px 4px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.2) inset;
     box-shadow:0 3px 4px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.2) inset;
@@ -39,29 +39,9 @@ body {
     float: right;
     right: 0;
 }
-#nav ul {
-    text-align: center;
-    width: auto;
-    margin: 0;
-    padding: 0;
-    list-style:none;
-}
 #nav li {
     float: right;
     width: 100px;
-}
-#nav a {
-    font-family: 'Mouse Memoirs', sans-serif;
-    font-size: 22px;
-    color: #DEC9B6;
-    line-height: 62px;
-    display: inline-block;
-    padding:5px;
-    text-decoration: none;
-}
-#nav a:hover {
-    color: #FFFFFF;
-    text-decoration: underline;
 }
 #nav #list_icon {
     font-size: 0px;
@@ -69,11 +49,33 @@ body {
     float: right;
     margin-right: 10px;
 }
+#sub_nav {
+    display: none;
+    background-color: #5C3921;
+    border: solid #5C3921;
+    position: absolute;
+    float: right;
+    right: 0;
+    margin-top: 70px;
+    z-index: 1;
+    -webkit-box-shadow:0 3px 4px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.2) inset;
+    -moz-box-shadow:0 3px 4px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.2) inset;
+    box-shadow:0 3px 4px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.2) inset;
+}
+#sub_nav li {
+    padding: 5px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+#sub_nav a {
+    font-size: 30px;
+}
 #joke_box {
     height: 80%;
     width: 100%;
     position: absolute;
     display: table;
+    z-index: 0;
 }
 #joke_box p {
     color: #BDAD44;
@@ -189,16 +191,36 @@ body {
     font-size:20px; 
     margin-left: 6px;
     margin-bottom: 0;
-        text-shadow: 1px 1px 0 rgb(-18,-39,-201), 2px 2px 0 rgb(-60,-81,-243),3px 3px 2px rgba(0,0,0,1),3px 3px 1px rgba(0,0,0,0.5),0px 0px 1px rgba(0,0,0,.2);
+    text-shadow: 1px 1px 0 rgb(-18,-39,-201), 2px 2px 0 rgb(-60,-81,-243),3px 3px 2px rgba(0,0,0,1),3px 3px 1px rgba(0,0,0,0.5),0px 0px 1px rgba(0,0,0,.2);
 }
 #simplemodal-container a {
     font-family: 'McLaren', cursive;
     color: #FFFFFF;
     font-size:15px; 
     margin-left: 28px;
+    padding: 0;
+    line-height: 100%;
+}
+a {
+    font-family: 'Mouse Memoirs', sans-serif;
+    font-size: 22px;
+    color: #DEC9B6;
+    line-height: 62px;
+    display: inline-block;
+    padding:5px;
+    text-decoration: none;
 }
 a:hover {
+    color: #FFFFFF;
+    text-decoration: underline;
     cursor: pointer;
+}
+ul {
+    text-align: center;
+    width: auto;
+    margin: 0;
+    padding: 0;
+    list-style:none;
 }
 :focus {outline:none;}
 ::-moz-focus-inner {border:0;}
