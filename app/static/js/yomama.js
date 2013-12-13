@@ -1,3 +1,4 @@
+var subNavOpen = false;
 window.onload = function() {
     $.getJSON("http://127.0.0.1:5000/api/joke/", function(data) {
         document.getElementById('joke').innerHTML = data.joke[0];
@@ -41,29 +42,28 @@ function getCategories() {
         $('#drop_down').css('position','absolute');
     }
 }
-function openSubNav() {
-    if ($('.nav_button').css('display') == 'none') {
-        $('.nav_button').css('display', 'inline-block');
-        $('.nav_button').css('padding-top', '10%');
-        $('.nav_button').css('position', 'absolute');
-    }
-}
 function openDocs() {
     $('#api_docs_content').modal();
     return false;
 }
-$('body').click(function(evt){
-    if(evt.target.id == "api_docs_content"
-     || evt.target.id == "api_docs_button"
-     || evt.target.id == "sub_nav") {
-        return;
-    } else {
-        $.modal.close();
-        $('#sub_nav').css('display', 'none');
-    }
-});
 function openSubNav() {
     if ($('#sub_nav').css('display') == 'none') {
         $('#sub_nav').css('display', 'inline');
     }
 }
+$('body').click(function(evt){
+    if(evt.target.id == "api_docs_content"
+     || evt.target.id == "api_docs_button") {
+        return;
+    }
+    $.modal.close();
+    if ($('#sub_nav').css('display') != 'none'
+        && !subNavOpen) {
+        subNavOpen = true;
+    } else if ($('#sub_nav').css('display') != 'none'
+        && subNavOpen
+        && evt.target.id != "sub_nav") {
+        $('#sub_nav').css('display', 'none');
+        subNavOpen = false;
+    }
+});
