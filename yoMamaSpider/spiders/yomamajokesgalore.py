@@ -26,7 +26,7 @@ class YoMamaJokesGalore(CrawlSpider):
     def parse_page(self, response):
         hxs = HtmlXPathSelector(response)
         categories = stripcats(hxs.select('//title/text()').extract())
-        joke_area = hxs.select('//table[contains(@width, "500")]/tr/td//text()').extract()
+        joke_area = hxs.select('//table[contains(@width, "435")]/tr/td//text()').extract()
         for joke in joke_area:
             joke = stripjokes(joke)
             if len(joke) > 15:
