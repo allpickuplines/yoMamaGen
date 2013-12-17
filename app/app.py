@@ -1,4 +1,5 @@
 import random
+import re
 from flask import Flask, render_template, jsonify
 from flask.ext.sqlalchemy import SQLAlchemy
 from models import Jokes, Base
@@ -50,7 +51,10 @@ def get_categories():
     Jokes.categories).all())
   output = []
   for category in categories:
-    output.append(category)
+    category = str(category).split(',')[0]
+    category = re.sub(r'(?i)([^\w\s])', '', category[2:])
+    if category not in output:
+      output.append(category)
   return jsonify(categories=output)
 
 if __name__ == '__main__':
