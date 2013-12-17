@@ -12,12 +12,27 @@ class Jokes(Base):
     categories = Column(Text)
 
 if __name__ == '__main__':
+    import re
+    import os
     from flask.ext.sqlalchemy import SQLAlchemy
     from app import app
-    import re
 
     db = SQLAlchemy(app)
     db.Model = Base
+
+    static_txt_dir = os.path.join(
+        os.path.dirname(
+            os.path.abspath(__file__)), 'static/txt')
+
+    for txt_file in os.listdir(static_txt_dir):
+        category = txt_file.split('_')[0].title()
+        
+        for line in open(
+            static_txt_dir + '/' + txt_file, 'r'):
+            db.session.add(Jokes(
+                joke = line.strip('\n'),
+                categories = category))
+            db.session.commit()
 
     categories = db.session.query(
         Jokes.categories.distinct()).order_by(
@@ -25,7 +40,6 @@ if __name__ == '__main__':
 
     for category in categories:
         category = re.sub(r'(?i)([^\w\s])', '', str(category)[2:])
-        print category
         if (category == 'Star Trek Wars Science Fiction Nerds'
             or category == 'Nerd Geek'
             or category == 'Math Related'):

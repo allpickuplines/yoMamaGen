@@ -1,5 +1,6 @@
 import random
 import re
+import os
 from flask import Flask, render_template, jsonify
 from flask.ext.sqlalchemy import SQLAlchemy
 from models import Jokes, Base
