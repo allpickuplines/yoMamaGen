@@ -2,6 +2,8 @@ YoMamaGen
 =========
 Generates random YoMama jokes.
 
+See: http://yomamagen.com
+
 Getting Started
 ---------------
 
