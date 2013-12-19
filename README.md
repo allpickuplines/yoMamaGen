@@ -21,13 +21,23 @@ This project uses Scrapy to scrape the data, all Scrapy commands are available e
     scrapy crawl [spider_name]
 ```
 
+Cleaning Up The Data
+-------------------
+
+To sort categories properly and add manually added jokes, run:
+
+```
+    python app/models.py
+```
+
+
 Providing an API
 ----------------
 
 This project uses Flask, Peewee ORM and Flask-Peewee to provide a REST API.
 
 ```
-    python app.py
+    python manage.py runserver
 ```
 
 Then follow on-screen instructions
