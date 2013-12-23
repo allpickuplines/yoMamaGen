@@ -1,9 +1,9 @@
 var subNavOpen = false;
 window.onload = function() {
-    $.getJSON("http://127.0.0.1:5000/api/joke/", function(data) {
+    $.getJSON("/api/joke/", function(data) {
         document.getElementById('joke').innerHTML = data.joke[0];
     });
-    $.getJSON("http://127.0.0.1:5000/api/categories/", function(data) {
+    $.getJSON("/api/categories/", function(data) {
         var categories = []
         $.each(data.categories, function(key, val) {
             var dropDown = document.getElementById('drop_down');
@@ -17,9 +17,9 @@ window.onload = function() {
 function getJoke() {
     var category = document.getElementById('cat_button').innerHTML;
     if (category == 'CATEGORIES' || category == 'ALL CATEGORIES') {
-        url = 'http://127.0.0.1:5000/api/joke/';
+        url = '/api/joke/';
     } else {
-        url = 'http://127.0.0.1:5000/api/joke/category/' + category;
+        url = '/api/joke/category/' + category;
     }
     $.getJSON(url, function(data) {
         document.getElementById('joke').innerHTML = data.joke[0];
