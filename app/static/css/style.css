@@ -4,6 +4,7 @@ body {
     height:100%;
     width: 100%;
     margin: 0%;
+    z-index: -5;
 }
 #top_bar {
     background-color: #5C3921;
@@ -200,6 +201,17 @@ body {
     margin-left: 28px;
     padding: 0;
     line-height: 100%;
+}
+#lines {
+    background-size: 40px 40px;    
+    background-image:repeating-linear-gradient(0deg, #fff, #fff 1px, transparent 1px, transparent 40px),repeating-linear-gradient(-90deg, #fff, #fff 1px, transparent 1px, transparent 40px);
+    height:100%;
+    width:100%;
+    opacity:0.14;    
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:-4;
 }
 a {
     font-family: 'Mouse Memoirs', sans-serif;
